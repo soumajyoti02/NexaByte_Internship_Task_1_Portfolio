@@ -4,6 +4,7 @@ import { PiFacebookLogo } from 'react-icons/pi';
 import { ImGithub } from 'react-icons/im';
 import { TiSocialLinkedinCircular } from 'react-icons/ti';
 import { AiFillTwitterCircle } from 'react-icons/ai';
+import Link from 'next/link';
 
 const Hero = () => {
     const [text, setText] = useState('');
@@ -68,11 +69,11 @@ const Hero = () => {
                         <button type="button" class="text-white bg-gradient-to-r from-blue-500 via-blue-600 to-blue-700 hover:bg-gradient-to-br shadow-lg shadow-blue-800/80 focus:ring-2 focus:outline-none focus:ring-blue-300 font-bold  rounded-lg  px-5 py-3 text-center mb-2 w-[60%] mt-6 md:w-[25%] md:mb-0 md:mt-0">Hire Me</button>
                     </div>
                     <div className="">
-                        <div className="h-16 w-80 flex justify-center items-center mt-10 space-x-9 mb-5 border-2 border-gray-700 rounded-xl ">
-                            <PiFacebookLogo className='text-blue-300 text-5xl' />
-                            <ImGithub className='text-blue-300 text-4xl' />
-                            <TiSocialLinkedinCircular className='text-blue-300 text-5xl' />
-                            <AiFillTwitterCircle className='text-blue-300 text-4xl' />
+                        <div className="h-16 w-80 flex justify-center items-center mt-10 space-x-9 mb-5 border-2 border-gray-700 rounded-xl hover:bg-gray-800">
+                            <Link href={`https://www.facebook.com/soumajy`} target='_blank'><PiFacebookLogo className='cursor-pointer text-blue-300 text-5xl' /></Link>
+                            <Link href={`https://github.com/soumajyoti02`} target='_blank'><ImGithub className='text-blue-300 text-4xl cursor-pointer' /></Link>
+                            <Link href={`https://linkedin.com/in/soumajyoti-sarkar-6a88a2166`} target='_blank'><TiSocialLinkedinCircular className='text-blue-300 text-5xl cursor-pointer' /></Link>
+                            <Link href={`https://twitter.com/soumajyoti02`} target='_blank'><AiFillTwitterCircle className='text-blue-300 text-4xl cursor-pointer' /></Link>
                         </div>
                     </div>
                 </div>

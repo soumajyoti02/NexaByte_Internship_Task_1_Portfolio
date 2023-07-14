@@ -19,7 +19,7 @@ const Projects = () => {
                         </div>
 
                         <Link href={`https://huntingcoder-azure.vercel.app/`} target='_blank' className="right mt-14 pl-2 md:mt-[0.5rem]">
-                            <img src="huntingcoder.jpg" alt="huntingcoder" className='h-[300px] w-full md:pb-2 md:rounded-lg  md:hover:-translate-y-10 transition duration-300' />
+                            <img src="huntingcoder.jpg" alt="huntingcoder" className='h-[300px] w-full md:pb-2 md:rounded-lg  md:hover:-translate-y-5 transition duration-300' />
                         </Link>
                     </div>
 

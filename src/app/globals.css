@@ -28,4 +28,27 @@ body {
     .yglow {
         text-shadow: 0 0 5px rgba(255, 255, 0, 0.2), 0 0 10px rgba(255, 255, 0, 0.2), 0 0 20px rgba(255, 255, 0, 0.2), 0 0 40px rgba(255, 255, 0, 0.2);
     }
+
+    .neon-text {
+        text-shadow: 0 0 10px rgba(0, 191, 255, 0.5), 0 0 20px rgba(0, 191, 255, 0.5), 0 0 30px rgba(0, 191, 255, 0.5);
+        position: relative;
+    }
+
+    .neon-text::after {
+        content: '';
+        width: 0;
+        height: 5px;
+        left: 0;
+        top: 100%;
+        border-radius: 2px;
+        position: absolute;
+        background: #F806CC;
+        transition: 0.5s;
+        box-shadow: 0px 0px 8px #F806CC;
+    }
+
+    .neon-text:hover::after {
+        width: 60%;
+        transform: translateX(50%);
+    }
 }
