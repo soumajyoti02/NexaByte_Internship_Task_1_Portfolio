@@ -33,7 +33,7 @@ const Projects = () => {
                             </p>
                         </div>
                         <Link href={`https://devwear-production.vercel.app/`} target='_blank' className="right mt-14 pl-2 md:w-1/2">
-                            <img src="devwear.jpg" alt="devwear" className=' w- md:w-[90%] md:pb-10 md:rounded-lg md:overflow-hidden md:hover:-translate-y-10 transition duration-300' />
+                            <img src="devwear.jpg" alt="devwear" className=' w- md:w-[90%] md:pb-10 md:rounded-lg md:overflow-hidden md:hover:-translate-y-10 transition duration-300 opacity-90' />
                         </Link>
                     </div>
                 </div>
