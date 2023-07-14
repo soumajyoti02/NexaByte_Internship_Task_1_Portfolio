@@ -4,9 +4,9 @@ import React from 'react'
 const Projects = () => {
     return (
         <>
-            <div className="min-h-screen bg-gray-900 pb-20">
-                <div className="">
-                    <h1 className="text-5xl text-white font-bold text-center pt-8 glow">Projects</h1>
+            <section id='projects' className="min-h-screen bg-gray-900 pb-20 pt-[45px] md:pt-[65px]">
+                <div className="project">
+                    <h1 className="text-5xl text-white font-bold text-center pt-8 glow">My Projects</h1>
 
                     {/* Project Card 1 */}
                     <div className="w-screen mt-10 mx-auto rounded-3xl overflow-hidden shadow-[0_20px_50px_rgba(8,_102,_124,_0.6)] md:w-[90%] md:flex md:flex-wrap md:justify-between md:items-center md:p-3 md:shadow-[0_20px_50px_rgba(8,_102,_124,_0.4)] md:hover:shadow-[0_20px_50px_rgba(8,_102,_124,_0.8)] transition duration-200 ">
@@ -37,7 +37,7 @@ const Projects = () => {
                         </Link>
                     </div>
                 </div>
-            </div>
+            </section>
         </>
     )
 }

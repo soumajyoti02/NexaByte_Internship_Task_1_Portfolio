@@ -3,7 +3,7 @@ import React from 'react'
 const Education = () => {
     return (
         <>
-            <div className="bg-gray-900 pt-10 md:pt-0">
+            <section id='education' className="bg-gray-900 pt-20 md:pt-0">
                 <h1 class="text-5xl font-bold text-white relative glow text-center">
                     Education
                 </h1>
@@ -45,7 +45,7 @@ const Education = () => {
                         <img class=" transition-all duration-300 rounded-lg cursor-pointer filter pt-7 hover:translate-y-4" src="education.png" alt="image description" />
                     </div>
                 </div>
-            </div>
+            </section>
         </>
     )
 }

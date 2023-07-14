@@ -26,8 +26,8 @@ const Skills = () => {
     };
     return (
         <>
-            <div className="h-[175vh] md:h-[210vh] bg-gray-900 pt-10 md:pt-24">
-                <div className="bg-blue-100 bg-opacity-10  shadow-2xl shadow-blue-500/30 rounded-[5rem] h-[95%] w-screen md:w-[90%] md:m-auto box-border transition duration-200">
+            <section id='skills' className="h-[230vh] md:h-[210vh] bg-gray-900  md:pt-24 pt-24">
+                <div className="bg-blue-100 bg-opacity-10  shadow-2xl shadow-blue-800/80 rounded-[5rem] h-[95%] w-screen md:w-[90%] md:m-auto box-border transition duration-200">
                     <h1 className="text-gray-200 font-bold text-5xl text-center pt-16 h-[120px] md:h-[100px] font-sans glow">Skills</h1>
 
                     <div className="web h-[400px]">
@@ -130,7 +130,7 @@ const Skills = () => {
 
 
                 </div>
-            </div>
+            </section>
         </>
     )
 }
