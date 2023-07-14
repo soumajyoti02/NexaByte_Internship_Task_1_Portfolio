@@ -9,15 +9,17 @@ const Navbar = () => {
     }
     return (
         <>
-            <div className='sticky z-50 top-0 '>
+            <div className='sticky z-[9999] top-0 bg-gray-900 '>
                 <div className="h-16 w-screen bg-gray-900 ">
                     <nav className=' flex justify-between w-[90%] m-auto h-full'>
                         <div className="logo md:w-[30%]">
-                            <h1 className="text-2xl text-white pt-4 pl-4 font-extrabold">Soumajyoti.</h1>
+                            <h1 className="text-2xl text-white pt-4 pl-4 font-extrabold glow">Soumajyoti.</h1>
                         </div>
                         <div className="icon mt-5 cursor-pointer md:hidden block">
                             <AiOutlineMenu className='text-white text-2xl font-bold' onClick={toggleSidebar} />
                         </div>
+
+                        {/* LAPTOP SCREEN */}
                         <div className="md:block hidden w-[50%] h-full">
                             <ul className="flex justify-evenly items-center h-full">
                                 <li className="cursor-pointer h-10 font-semibold text-white p-1">Home</li>
