@@ -26,7 +26,7 @@ const Navbar = () => {
 
     return (
         <>
-            <div className='sticky z-[9999] top-0 bg-gray-900 '>
+            <div className='fixed z-50 top-0 bg-gray-900 '>
                 <div className="h-16 md:h-20 w-screen bg-gray-900 ">
                     <nav className=' flex justify-between w-[90%] m-auto h-full'>
                         <Link to="home"
