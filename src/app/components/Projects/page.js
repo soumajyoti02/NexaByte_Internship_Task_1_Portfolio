@@ -1,11 +1,40 @@
+"use client"
+import React, { useEffect, useRef, useState } from 'react'
+import { useScroll, motion } from 'framer-motion';
 import Link from 'next/link'
-import React from 'react'
 
 const Projects = () => {
+
+    // Code for framer-motion effect
+    // --------------------------------------
+    const [isVisible, setIsVisible] = useState(false);
+    const ref = useRef(null);
+
+    useEffect(() => {
+        const handleScroll = () => {
+            if (ref.current) {
+                const rect = ref.current.getBoundingClientRect();
+                const isVisible = rect.top < window.innerHeight * 0.9; // Adjust the threshold as needed
+                setIsVisible(isVisible);
+            }
+        };
+
+        window.addEventListener('scroll', handleScroll);
+        return () => {
+            window.removeEventListener('scroll', handleScroll);
+        };
+    }, []);
+    // --------------------------------------
+    // After writing this, just add ref={ref} in main section. 
+    // write motion.div into desired container and add initial, animate & transition options in that.
+
+
     return (
         <>
-            <section id='projects' className="min-h-screen bg-gray-900 pb-20 pt-[45px] md:pt-[65px]">
-                <div className="project">
+            <section ref={ref} id='projects' className="min-h-screen bg-gray-900 pb-20 pt-[45px] md:pt-[65px]">
+                <motion.div initial={{ x: '30%' }}
+                    animate={{ x: isVisible ? 0 : '30%' }}
+                    transition={{ duration: 0.5 }} className="project">
                     <h1 className="text-5xl text-white font-bold text-center pt-8 glow">My Projects</h1>
 
                     {/* Project Card 1 */}
@@ -36,7 +65,7 @@ const Projects = () => {
                             <img src="devwear.jpg" alt="devwear" className=' w- md:w-[90%] md:pb-10 md:rounded-lg md:overflow-hidden md:hover:-translate-y-10 transition duration-300 opacity-90' />
                         </Link>
                     </div>
-                </div>
+                </motion.div>
             </section>
         </>
     )

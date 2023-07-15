@@ -1,9 +1,33 @@
 'use client'
-import React, { useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
+import { useScroll, motion } from 'framer-motion';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 const Contact = () => {
+
+    // Code for framer-motion effect
+    // --------------------------------------
+    const [isVisible, setIsVisible] = useState(false);
+    const ref = useRef(null);
+
+    useEffect(() => {
+        const handleScroll = () => {
+            if (ref.current) {
+                const rect = ref.current.getBoundingClientRect();
+                const isVisible = rect.top < window.innerHeight * 0.9; // Adjust the threshold as needed
+                setIsVisible(isVisible);
+            }
+        };
+
+        window.addEventListener('scroll', handleScroll);
+        return () => {
+            window.removeEventListener('scroll', handleScroll);
+        };
+    }, []);
+    // --------------------------------------
+    // After writing this, just add ref={ref} in main section. 
+    // write motion.div into desired container and add initial, animate & transition options in that.
 
     const [user, setUser] = useState({
         username: "",
@@ -69,7 +93,7 @@ const Contact = () => {
 
     return (
         <>
-            <section id='contact' className="h-[75vh] w-screen bg-gray-900 md:h-[100vh]  box-border">
+            <section ref={ref} id='contact' className="h-[75vh] w-screen bg-gray-900 md:h-[100vh]  box-border">
                 <ToastContainer
                     position="top-left"
                     autoClose={2000}
@@ -82,7 +106,9 @@ const Contact = () => {
                     pauseOnHover
                     theme="dark"
                 />
-                <div className="md:flex md:w-[90vw] md:m-auto md:justify-between md:h-[80%]">
+                <motion.div initial={{ x: '30%' }}
+                    animate={{ x: isVisible ? 0 : '30%' }}
+                    transition={{ duration: 0.5 }} className="md:flex md:w-[90vw] md:m-auto md:justify-between md:h-[80%]">
 
                     <div className="left bg-gray-900 py-10 shadow-[0_20px_50px_rgba(8,_112,_184,_0.7)] rounded-[3.5rem] md:w-[30%] md:shadow-[0_20px_50px_rgba(8,_112,_184,_0.5)] md:hover:shadow-[0_20px_50px_rgba(8,_112,_184,_0.7)] md:transition md:duration-300">
                         <div className=" px-4">
@@ -120,9 +146,9 @@ const Contact = () => {
 
 
                     <div className="right hidden md:block w-[60%]  my-auto">
-                        <img src="contact.png" alt="contact" className='w-full transition duration-20000 hover:-translate-y-14' />
+                        <img src="contact.png" alt="contact" className='w-full opacity-60 hover:opacity-80 transition duration-300' />
                     </div>
-                </div>
+                </motion.div>
             </section>
         </>
     )

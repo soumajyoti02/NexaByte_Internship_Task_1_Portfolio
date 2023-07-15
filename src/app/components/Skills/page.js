@@ -1,10 +1,35 @@
 "use client"
-import React from 'react'
+import React, { useEffect, useRef, useState } from 'react'
+import { useScroll, motion } from 'framer-motion';
 import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
 
 
 const Skills = () => {
+
+    // Code for framer-motion effect
+    // --------------------------------------
+    const [isVisible, setIsVisible] = useState(false);
+    const ref = useRef(null);
+
+    useEffect(() => {
+        const handleScroll = () => {
+            if (ref.current) {
+                const rect = ref.current.getBoundingClientRect();
+                const isVisible = rect.top < window.innerHeight * 0.8; // Adjust the threshold as needed
+                setIsVisible(isVisible);
+            }
+        };
+
+        window.addEventListener('scroll', handleScroll);
+        return () => {
+            window.removeEventListener('scroll', handleScroll);
+        };
+    }, []);
+    // --------------------------------------
+    // After writing this, just add ref={ref} in main section. 
+    // write motion.div into desired container and add initial, animate & transition options in that.
+
     const responsive = {
         superLargeDesktop: {
             // the naming can be any, depends on you.
@@ -26,11 +51,13 @@ const Skills = () => {
     };
     return (
         <>
-            <section id='skills' className="h-[230vh] md:h-[210vh] bg-gray-900  md:pt-24 pt-24">
-                <div className="bg-blue-100 bg-opacity-10  shadow-2xl shadow-blue-800/80 rounded-[5rem] h-[95%] w-screen md:w-[90%] md:m-auto box-border transition duration-200">
+            <section id='skills' className="h-[200vh] md:h-[210vh] bg-gray-900  md:pt-24 pt-24">
+                <div ref={ref} className="bg-blue-100 bg-opacity-10  shadow-2xl shadow-blue-800/80 rounded-[5rem] h-[95%] w-screen md:w-[90%] md:m-auto box-border transition duration-200">
                     <h1 className="text-gray-200 font-bold text-5xl text-center pt-16 h-[120px] md:h-[100px] font-sans glow">Skills</h1>
 
-                    <div className="web h-[400px]">
+                    <motion.div initial={{ x: '30%' }}
+                        animate={{ x: isVisible ? 0 : '30%' }}
+                        transition={{ duration: 0.5 }} className="web h-[400px]">
                         <h1 className="text-gray-300 text-center pt-10 md:pt-16 font-bold text-3xl">Development Skills</h1>
 
                         <Carousel responsive={responsive} infinite={true} className="owl-carousel owl-theme w-[80%] mx-auto my-auto relative h-[300px] ">
@@ -68,11 +95,13 @@ const Skills = () => {
                             </div>
 
                         </Carousel>
-                    </div>
+                    </motion.div>
 
                     <hr class="w-[80%] h-[0.1rem] mx-auto mt-0 bg-gray-700 border-0 rounded-3xl  "></hr>
 
-                    <div className="web h-[400px]">
+                    <motion.div initial={{ x: '15%' }}
+                        animate={{ x: isVisible ? 0 : '15%' }}
+                        transition={{ duration: 0.5 }} className="web h-[400px]">
                         <h1 className="text-gray-300 text-center pt-16 md:pt-16 font-bold text-3xl">Programming Skills</h1>
                         <Carousel responsive={responsive} infinite={true} className="owl-carousel owl-theme w-[80%] mx-auto my-auto relative h-[300px]">
                             <div className="item">
@@ -96,11 +125,13 @@ const Skills = () => {
                                 <h5 className='text-white font-bold text-xl text-center '>R</h5>
                             </div>
                         </Carousel>
-                    </div>
+                    </motion.div>
 
                     <hr class="w-[80%] h-[0.1rem] mx-auto mt-4 bg-gray-700 border-0 rounded-3xl  "></hr>
 
-                    <div className="web h-[400px]">
+                    <motion.div initial={{ x: '15%' }}
+                        animate={{ x: isVisible ? 0 : '15%' }}
+                        transition={{ duration: 0.5 }} className="web h-[400px]">
                         <h1 className="text-gray-300 text-center pt-16 md:pt-16 font-bold text-3xl">Soft Skills</h1>
                         <Carousel responsive={responsive} infinite={true} className="owl-carousel owl-theme w-[80%] mx-auto my-auto relative h-[300px]">
                             <div className="item">
@@ -124,7 +155,7 @@ const Skills = () => {
                                 <h5 className='text-white font-bold text-xl text-center '>Active Listening</h5>
                             </div>
                         </Carousel>
-                    </div>
+                    </motion.div>
 
 
 

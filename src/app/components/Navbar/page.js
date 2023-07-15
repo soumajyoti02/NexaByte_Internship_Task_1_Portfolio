@@ -40,8 +40,8 @@ const Navbar = () => {
                         </div>
 
                         {/* LAPTOP SCREEN */}
-                        <div className="md:block hidden w-[50%] h-full">
-                            <ul className="flex justify-evenly items-center h-full">
+                        <div className="md:block hidden w-[50%] h-[94%] pt-2">
+                            <ul className="flex justify-evenly items-center h-full bg-blue-100 bg-opacity-10 rounded-3xl shadow-[rgba(0,_0,_0,_0.4)_0px_30px_90px] ">
                                 <li><Link to="home"
                                     spy={true}
                                     smooth={true}
@@ -71,7 +71,7 @@ const Navbar = () => {
 
                 {/* MOBILE VIEW */}
                 <div className={`h-[22rem] w-screen rounded-b-[3rem] ${toggle ? "absolute top-16 backdrop-blur-3xl transition  duration-500" : "hidden"} `}>
-                    <ul className="w-[90%] m-auto space-y-3 flex flex-col items-center pt-6">
+                    <ul className="w-[90%] m-auto space-y-3 flex flex-col items-center pt-4">
                         <li><Link to="home"
                             spy={true}
                             smooth={true}
@@ -91,8 +91,8 @@ const Navbar = () => {
                         <Link to="contact"
                             spy={true}
                             smooth={true}
-                            duration={500} className="cursor-pointer relative inline-flex items-center justify-center p-0.5 mb-2 mt-8 overflow-hidden text-sm font-medium  rounded-lg group bg-gradient-to-br from-green-400 to-blue-600 group-hover:from-green-400 group-hover:to-blue-600 hover:text-white text-white focus:ring-2 focus:outline-none focus:ring-green-800 ">
-                            <span className="relative px-5 py-2.5 transition-all ease-in duration-75  bg-gray-700 rounded-md group-hover:bg-opacity-0 text-lg ">
+                            duration={500} className="cursor-pointer h-10 font-semibold text-white p-1 bg-gradient-to-r from-purple-500 to-pink-500 hover:bg-gradient-to-l w-40 text-center rounded-lg pt-[0.35rem] transition duration-300  ">
+                            <span className="relative px-5 py-2.5 transition-all ease-in duration-75   rounded-md group-hover:bg-opacity-0 text-lg ">
                                 Let&apos; Connect
                             </span>
                         </Link>

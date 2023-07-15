@@ -4,8 +4,9 @@ import { PiFacebookLogo } from 'react-icons/pi';
 import { ImGithub } from 'react-icons/im';
 import { TiSocialLinkedinCircular } from 'react-icons/ti';
 import { AiFillTwitterCircle } from 'react-icons/ai';
-// import Link from 'next/link';
 import { Link, animateScroll as scroll } from "react-scroll";
+// import { motion } from 'framer-motion';
+
 
 const Hero = () => {
     const [text, setText] = useState('');
@@ -13,7 +14,7 @@ const Hero = () => {
     const [loopNum, setLoopNum] = useState(0);
     const [isDeleting, setIsDeleting] = useState(false);
     const [index, setIndex] = useState(1);
-    const toRotate = ["Web Developer", "Web Designer", "UI/UX Designer"];
+    const toRotate = ["Web Developer", "AI Developer", "Data Analyst"];
     const period = 400;
 
     useEffect(() => {
@@ -87,22 +88,22 @@ const Hero = () => {
                     </div>
                     <div className="">
                         <div className="h-16 w-80 flex justify-center items-center mt-10 space-x-9 mb-5 border-2 border-gray-700 rounded-xl hover:bg-gray-800">
-                            <Link href={`https://www.facebook.com/soumajy`} target='_blank'><PiFacebookLogo className='cursor-pointer text-blue-300 text-5xl' /></Link>
-                            <Link href={`https://github.com/soumajyoti02`} target='_blank'><ImGithub className='text-blue-300 text-4xl cursor-pointer' /></Link>
-                            <Link href={`https://linkedin.com/in/soumajyoti-sarkar-6a88a2166`} target='_blank'><TiSocialLinkedinCircular className='text-blue-300 text-5xl cursor-pointer' /></Link>
-                            <Link href={`https://twitter.com/soumajyoti02`} target='_blank'><AiFillTwitterCircle className='text-blue-300 text-4xl cursor-pointer' /></Link>
+                            <Link href={`https://www.facebook.com/soumajy`} ><PiFacebookLogo className='cursor-pointer text-blue-300 text-5xl' /></Link>
+                            <Link href={`https://github.com/soumajyoti02`} ><ImGithub className='text-blue-300 text-4xl cursor-pointer' /></Link>
+                            <Link href={`https://linkedin.com/in/soumajyoti-sarkar-6a88a2166`} ><TiSocialLinkedinCircular className='text-blue-300 text-5xl cursor-pointer' /></Link>
+                            <Link href={`https://twitter.com/soumajyoti02`} ><AiFillTwitterCircle className='text-blue-300 text-4xl cursor-pointer' /></Link>
                         </div>
                     </div>
                 </div>
                 <div className="right md:block hidden w-1/2 h-[75vh]">
                     <div className="flex h-full w-full justify-center items-center">
-                        <div className="h-full w-[80%] flex pt-10">
-
-                            <img className=" transition-all duration-300 rounded-lg cursor-pointer filter pt-7 hover:translate-y-4" src="tech.png" alt="image description" />
+                        <div className="z-20 h-full w-[80%] flex pt-10 ">
+                            <img className=" transition-all duration-300 rounded-full  filter pt-7 translate-y-4 hover:translate-y-8 shadow-2xl shadow-blue-500/20  hover:shadow-blue-500/50 opacity-70" src="me_tr.png" alt="image description" />
 
                         </div>
                     </div>
                 </div>
+
             </section>
         </>
     )
