@@ -93,7 +93,7 @@ const Contact = () => {
 
     return (
         <>
-            <section ref={ref} id='contact' className="h-[75vh] w-screen bg-gray-900 md:h-[100vh]  box-border">
+            <section id='contact' className="h-[75vh] w-screen bg-gray-900 md:h-[100vh]  box-border">
                 <ToastContainer
                     position="top-left"
                     autoClose={2000}
@@ -106,11 +106,12 @@ const Contact = () => {
                     pauseOnHover
                     theme="dark"
                 />
-                <motion.div initial={{ x: '30%' }}
-                    animate={{ x: isVisible ? 0 : '30%' }}
-                    transition={{ duration: 0.5 }} className="md:flex md:w-[90vw] md:m-auto md:justify-between md:h-[80%]">
 
-                    <div className="left bg-gray-900 py-10 shadow-[0_20px_50px_rgba(8,_112,_184,_0.7)] rounded-[3.5rem] md:w-[30%] md:shadow-[0_20px_50px_rgba(8,_112,_184,_0.5)] md:hover:shadow-[0_20px_50px_rgba(8,_112,_184,_0.7)] md:transition md:duration-300">
+                <div ref={ref} className="md:flex md:w-[90vw] md:m-auto md:justify-between md:h-[80%]">
+
+                    <motion.div initial={{ x: '30%' }}
+                        animate={{ x: isVisible ? 0 : '30%' }}
+                        transition={{ duration: 0.1 }} className="left bg-gray-900 py-10 shadow-[0_20px_50px_rgba(8,_112,_184,_0.7)] rounded-[3.5rem] md:w-[30%] md:shadow-[0_20px_50px_rgba(8,_112,_184,_0.5)] md:hover:shadow-[0_20px_50px_rgba(8,_112,_184,_0.7)] md:transition md:duration-300">
                         <div className=" px-4">
                             <h2 className="text-4xl text-white font-bold mb-6 text-center glow">Contact Me</h2>
                             <form onSubmit={handleSubmit}>
@@ -142,13 +143,13 @@ const Contact = () => {
                             </form>
 
                         </div>
-                    </div>
+                    </motion.div>
 
 
                     <div className="right hidden md:block w-[60%]  my-auto">
                         <img src="contact.png" alt="contact" className='w-full opacity-60 hover:opacity-80 transition duration-300' />
                     </div>
-                </motion.div>
+                </div>
             </section>
         </>
     )

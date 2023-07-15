@@ -45,7 +45,7 @@ const Education = () => {
                             </span>
                             <h3 className="flex items-center mb-1 text-lg font-semibold  text-white">Academy of Technology <span className="  text-sm font-medium mr-2 px-2.5 py-0.5 rounded  text-gray-100 ml-3 bg-blue-500 shadow-[-2px_2px_16px_0px_#2b6cb0]">Latest</span></h3>
                             <time className="block mb-2 text-sm font-normal leading-none text-gray-500">October 2021 - July 2025</time>
-                            <p className="mb-4 text-base font-normal  text-gray-400">I completed my B.Tech in Electronics and Communication at Academy of Technology, achieving a remarkable GPA of 9.1. Ready to apply my strong foundation in circuit design, signal processing, and communication systems to contribute to technological advancements.</p>
+                            <p className="mb-4 text-base font-normal  text-gray-400">I am currently studing my B.Tech in Electronics and Communication Engineering at Academy of Technology, achieving a remarkable GPA of 9.1. Ready to apply my strong foundation in circuit design, signal processing, and communication systems to contribute to technological advancements.</p>
                         </li>
                         <li className="mb-10 ml-6">
                             <span className="absolute flex items-center justify-center w-6 h-6  rounded-full -left-3 ring-8  ring-gray-900 bg-blue-900">

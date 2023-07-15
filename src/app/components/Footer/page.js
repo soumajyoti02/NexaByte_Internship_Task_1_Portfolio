@@ -1,4 +1,6 @@
+'use client'
 import React from 'react'
+import { Link } from 'react-scroll'
 
 const Footer = () => {
     return (
@@ -6,9 +8,12 @@ const Footer = () => {
 
             <footer className="text-gray-400 bg-gray-900 body-font pt-10">
                 <div className="container px-5 py-8 mx-auto flex items-center sm:flex-row flex-col md:px-16">
-                    <a className="flex title-font font-medium items-center md:justify-start justify-center text-white">
-                        <span className="ml-3 text-xl glow font-bold">Soumajyoti.</span>
-                    </a>
+                    <Link to="home"
+                        spy={true}
+                        smooth={true}
+                        duration={500} className="flex title-font font-medium items-center md:justify-start justify-center text-white cursor-pointer">
+                        <h1 className="ml-3 text-xl glow font-bold">Soumajyoti.</h1>
+                    </Link>
                     <p className="text-sm text-gray-400 sm:ml-4 sm:pl-4 sm:border-l-2 sm:border-gray-800 sm:py-2 sm:mt-0 mt-4">© 2023 All Rights Reserved —
                         <a href={`https://www.facebook.com/soumajy`} target='_blank' className="text-gray-500 ml-1" rel="noopener noreferrer">@Soumajyoti</a>
                     </p>
