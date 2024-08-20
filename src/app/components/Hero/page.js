@@ -50,7 +50,7 @@ const Hero = () => {
         }
     }
     const resumeDownload = () => {
-        const fileId = `1kj7L0cauvaoSQdDT7PvyEX0N4MFeOnCJ`;
+        const fileId = `1vWorvWG_YaBpw1jIP05TKbsJQHTTzqZO`;
 
         // Create a temporary anchor element
         const link = document.createElement('a');
@@ -58,6 +58,7 @@ const Hero = () => {
         link.target = '_blank';
         link.download = 'YourResume.pdf';
         link.click();
+
 
         // Remove the temporary anchor element
         document.body.removeChild(link);
